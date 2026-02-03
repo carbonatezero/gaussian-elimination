@@ -1,6 +1,6 @@
 import type { Rational, Step, HighlightSpec } from "./types";
 import {
-  add, sub, mul, div, rat, isZero, toString, toTeX, cloneMatrix, normalize, neg, isAllZeroRow
+  add, sub, mul, div, rat, isZero, toString, toTeX, cloneMatrix, normalize, isAllZeroRow
 } from "./rational";
 
 /**
@@ -162,9 +162,9 @@ function affineZero(): Affine {
   return { c: rat(0), coeffs: new Map() };
 }
 
-function affineClone(a: Affine): Affine {
-  return { c: a.c, coeffs: new Map(a.coeffs) };
-}
+// function affineClone(a: Affine): Affine {
+//   return { c: a.c, coeffs: new Map(a.coeffs) };
+// }
 
 function affineAdd(a: Affine, b: Affine): Affine {
   const out: Affine = { c: add(a.c, b.c), coeffs: new Map(a.coeffs) };
